@@ -1,0 +1,148 @@
+@import '../../../../../styles/base/colors';
+@import '../../../../../styles/base/typography';
+
+.datepicker {
+
+  &-options {
+    display: flex;
+    margin: 10px 10px 0 10px;
+
+    > button {
+      background: $white;
+      border: solid 1px $gray6;
+      border-radius: 4px;
+      color: $cerulean;
+      cursor: pointer;
+      flex: 1 1 auto;
+      font-size: 12px;
+      height: 30px;
+      line-height: 30px;
+      padding: 0;
+
+      &:first-of-type {
+        margin-right: 5px;
+      }
+    }
+  }
+
+  &-navigation {
+    display: flex;
+    margin: 5px 10px 15px 10px;
+
+    button {
+      align-content: center;
+      background: none;
+      border: 0;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      outline: 0;
+      padding: 0;
+      min-width: 40px;
+      width: 40px;
+
+      > mat-icon {
+        align-self: center;
+        flex: 1 1 auto;
+      }
+    }
+
+    .select-wrapper {
+      padding: 5px;
+      border: solid 1px $gray6;
+      border-radius: 3px;
+      flex: 1 1 auto;
+
+      &:first-of-type {
+        margin-right: 5px;
+      }
+
+      .mat-select {
+        border: 0;
+      }
+    }
+  }
+
+  &-nextdate-wrapper {
+    align-content: center;
+    background: rgba($gray7, .8);
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 115px);
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 115px;
+    z-index: 1;
+
+    > p, > button {
+      align-self: center;
+    }
+  }
+
+  &-no-availability {
+    @include t-body-strong();
+    margin-bottom: 30px;
+    max-width: 70%;
+    text-align: center;
+
+    > button {
+      background: none;
+      cursor: pointer;
+    }
+  }
+
+}
+
+::ng-deep {
+
+  .mat-calendar.packages-bar-calendar {
+    &.necbe {
+      .mat-button-wrapper {
+        color: $cobalt;
+      }
+
+      .datepicker-nextdate-wrapper {
+        .mat-button-wrapper {
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .datepicker-select-panel {
+
+    .mat-option {
+      .mat-option-text {
+        color: $black;
+        padding-left: 30px;
+        position: relative;
+      }
+
+      &.mat-selected {
+
+        .mat-option-text {
+
+          &::before {
+            align-items: center;
+            content: 'done';
+            display: flex;
+            font-family: 'Material Icons';
+            font-feature-settings: 'liga';
+            font-size: 24px;
+            height: 30px;
+            left: 0;
+            position: absolute;
+            width: 30px;
+          }
+        }
+      }
+    }
+
+    .mat-option-disabled {
+      display: none;
+    }
+  }
+
+}

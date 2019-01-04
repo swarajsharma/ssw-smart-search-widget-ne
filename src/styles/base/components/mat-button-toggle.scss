@@ -1,0 +1,41 @@
+@import '../colors';
+
+@mixin ow-mat-toggle-button() {
+
+  .mat-button-toggle-group {
+    background-color: $white;
+    text-align: center;
+    margin-bottom: 10px;
+
+    .mat-button-toggle-label {
+      margin-bottom: 0;
+      width: 100%;
+      cursor: pointer;
+    }
+
+    .mat-button-toggle-focus-overlay {
+      display: none;
+    }
+  }
+}
+
+$ow-mat-button-toggle-theme-foreground: (
+  disabled-button:   $black,
+  hint-text:         $black,
+  secondary-text:    $black,
+);
+
+$ow-mat-button-toggle-theme-background: (
+  disabled-button: $opacity-black-1,
+  focused-button: $opacity-black-1,
+  selected-button: $gray7,
+  selected-disabled-button: $white,
+  disabled-button-toggle: $white,
+);
+
+$ow-mat-toggle-theme: (
+  foreground: $ow-mat-button-toggle-theme-foreground,
+  background: $ow-mat-button-toggle-theme-background
+);
+
+$ow-mat-button-toggle-theme: $ow-mat-toggle-theme;

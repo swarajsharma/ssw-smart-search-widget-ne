@@ -1,0 +1,37 @@
+@import '../../../../../../styles/base/colors';
+
+.child-age {
+  //width: 120px;
+  //width: calc(100% - 166px);
+  width: 45%;
+  height: auto;
+  float: left;
+  border-radius: 4px;
+  background-color: $white;
+  //margin: 5px;
+  margin: 0 0 10px 10px;
+  text-align: center;
+}
+
+::ng-deep {
+  .mat-select {
+    border-radius: 4px;
+    background-color: $white;
+    border: solid 1px $gray6;
+    text-align: left;
+  }
+
+  .mat-select-value {
+    padding-left: 10px;
+  }
+}
+
+.show {
+  position: relative;
+
+  ::ng-deep {
+    .mat-select {
+      border: solid 1px $red;
+    }
+  }
+}

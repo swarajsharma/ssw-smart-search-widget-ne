@@ -1,0 +1,178 @@
+{
+  "searchWidget":{
+      "holidays":"Vakanties",
+      "hotel":"Hotel",
+      "cityBreak":" Citytrips",
+      "origin":"Van",
+      "destination":"Naar",
+      "checkIn":"Vertrekdatum",
+      "checkOut":"Retourdatum",
+      "under":"<",
+      "ageQuery":"Hoe oud zijn ze op de datum van terugkomst?",
+      "childAge":"Leeftijd kind 1",
+      "hotelLocation": "Plaats, hotelnaam, bezienswaardigheden",
+      "cityBreakLocation":"Stad of luchthaven",
+      "advanceOption":{
+        "directFlightsOnly":"Enkel rechtstreekse vluchten",
+        "preferredClass":"Klasse",
+        "any":"Alle",
+        "economy":"Economy",
+        "business":"Business class",
+        "firstClass":"First class",
+        "premium":"Premium Service"
+      },
+      "occupation": {
+      "room": "Kamer",
+      "rooms": "Kamers",
+      "adult": "volwassen",
+      "adults": "Volwassenen",
+      "childrenLabel": "Kinderen",
+      "children": "0-17",
+      "addRoom": "Extra kamer toevoegen",
+      "removeRoom": "Verwijderen",
+      "guest": "Guest",
+      "guests": "Reizigers",
+      "close": "Sluiten",
+      "maxRoomsError": "Maximum van 3 kamers toegepast",
+      "done": "Klaar",
+      "editSearch": "Wijzigen",
+      "bookingQuery":"Wil je op vakantie met meer dan 9 personen?",
+      "contactMsg":"Gelieve ons te contacteren op 01733 224 841 zodat één van onze medewerkers je kan helpen met je vakantienoden.",
+      "childAgeNotSelected": "Geef de leeftijd van het kind in",
+      "childAgeInfo": "Hoe oud zijn ze op de datum van terugkomst?",
+      "child": "Kind",
+      "age": "Leeftijd",
+      "moreInfantsThanAdultsError": "Meer baby's (0-2j) dan volwassenen?",
+      "moreInfantsThanAdultsMessage": "Onze medewerkers helpen je graag met je vakantienoden via 070 233 906."
+    }
+  },
+  "searchBar": {
+    "from": "Vertrek vanuit",
+    "to": "Waarheen",
+    "when": "Wanneer",
+    "duration": "Voor hoelang",
+    "durationOptions": {
+      "0": "Alles tonen",
+      "2-3": "2-3 nachten",
+      "4-7": "4-7 nachten",
+      "8-14": "8-14 nachten",
+      "15-21": "14+ nachten",
+      "1": "1 nacht",
+      "2": "2 nachten",
+      "3": "3 nachten",
+      "4": "4 nachten",
+      "5": "5 nachten",
+      "7": "7 nachten",
+      "8": "8 nachten",
+      "9": "9 nachten",
+      "10": "10 nachten",
+      "11": "11 nachten",
+      "12": "12 nachten",
+      "13": "13 nachten",
+      "14": "14 nachten",
+      "21": "21 nachten"
+    },
+    "flexible": "Ik ben flexibel +/- 3 dagen",
+    "search": "Vliegvakanties zoeken",
+    "searchHotelCB": "Zoeken",
+    "searchCityBreak": "Zoeken",
+    "apply": "Klaar",
+    "destinations": {
+      "default": "Alle bestemmingen",
+      "placeholder": "Zoek op land-, plaats- of hotelnaam",
+      "suggestions": {
+        "empty": "Sorry, we herkennen deze bestemming niet, <a href='https://www.neckermann.be/nl/citytrip/' title='Sorry, we herkennen deze bestemming niet, klik hier om onze citytrips te ontdekken' target='_blank' rel='noopener noreferrer'>klik hier</a> om onze citytrips te ontdekken",
+        "destinations": "Bestemmingen",
+        "hotels": "Hotels"
+      },
+      "popular": {
+        "title": "Kies een van de populaire bestemmingen",
+        "notAvailable": "We vliegen niet vanaf deze luchthaven naar de bestemming die je hebt geselecteerd"
+      }
+    },
+
+    "occupation": {
+      "room": "Kamer",
+      "adults": "Volwassenen",
+      "children": "Kinderen (0-17)",
+      "addRoom": "Extra kamer toevoegen",
+      "removeRoom": "Een kamer verwijderen"
+    },
+    "tooltip" : {
+      "title": "Lijst"
+    },
+    "datepicker" : {
+      "placeholder": "Alle data"
+    }
+  },
+  "search": {
+    "holidaysFound": "vakanties gevonden",
+    "facets": {
+      "boardType": "Vakantie Type",
+      "priceRange": "Budget per volwassene"
+    }
+  },
+  "tabs": {
+    "packages": {
+      "title": "Vliegvakanties"
+    },
+    "hotel": {
+      "title": "Hotel",
+      "location": "Destination, hotel name, airport, train station"
+    },
+    "citybreaks": {
+      "title": "Citytrips",
+      "origin": "Origin:",
+      "destination": "Destination:",
+      "location": "City or airport"
+    }
+  },
+  "recentSearches": {
+    "singular": "Je hebt {length} recente zoekopdracht",
+    "plural": "Je hebt {length} recente zoekopdrachten"
+  },
+  "datepicker": {
+    "searchAllOf": "Vertrek in",
+    "searchAnyDate": "Selectie wissen",
+    "shortMonthNames": {
+      "Jan": "jan",
+      "Feb": "feb",
+      "Mar": "maa",
+      "Apr": "apr",
+      "May": "mei",
+      "Jun": "jun",
+      "Jul": "jul",
+      "Aug": "aug",
+      "Sep": "sep",
+      "Oct": "okt",
+      "Nov": "nov",
+      "Dec": "dec"
+    },
+    "wholeMonthNames": {
+      "Jan": "januari",
+      "Feb": "februari",
+      "Mar": "maart",
+      "Apr": "april",
+      "May": "mei",
+      "Jun": "juni",
+      "Jul": "juli",
+      "Aug": "augustus",
+      "Sep": "september",
+      "Oct": "oktober",
+      "Nov": "november",
+      "Dec": "december"
+    },
+    "daysOfWeek": {
+      "SUN": "MA",
+      "MON": "DI",
+      "TUE": "WO",
+      "WED": "DO",
+      "THU": "VR",
+      "FRI": "ZA",
+      "SAT": "ZO"
+    },
+    "weekStartsOn": "0",
+    "noAvailability": "Geen beschikbaarheid voor deze maand",
+    "nextAvailableDateButton": "Toon eerstvolgende beschikbaarheid"
+  }
+}

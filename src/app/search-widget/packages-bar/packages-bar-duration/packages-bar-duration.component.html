@@ -1,0 +1,7 @@
+<mat-form-field>
+  <mat-select [formControl]="control" panelClass="select-duration-panel">
+    <mat-option *ngFor="let entity of durationEntities" [value]="entity.value">
+      {{ ('searchBar.durationOptions.' + entity.value) | translate }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

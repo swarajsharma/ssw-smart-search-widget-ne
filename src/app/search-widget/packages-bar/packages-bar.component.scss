@@ -1,0 +1,139 @@
+@import '../../../styles/base/colors';
+@import '../../../styles/base/typography';
+
+h2 {
+  @include t-title();
+}
+
+form {
+  color: $white;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  padding: 0 10px 15px 10px;
+}
+
+sw-packages-bar-recent-searches {
+  margin-top: 15px;
+}
+
+sw-room-selector {
+  margin-bottom: 15px;
+  width: 100%;
+
+  ::ng-deep {
+    > button {
+      max-width: none;
+      width: 100%;
+    }
+  }
+}
+
+:host {
+
+  .wrapper-when-duration {
+    display: flex;
+
+    sw-packages-bar-datepicker,
+    sw-packages-bar-duration {
+      flex: 1 1 auto;
+      max-width: 50%;
+    }
+
+    & + sw-room-selector {
+      margin-top: 15px;
+    }
+  }
+
+  ::ng-deep {
+
+    .mat-checkbox {
+      .mat-checkbox-layout {
+        margin: 5px 0;
+      }
+
+      .mat-checkbox-ripple {
+        height: 0;
+        margin: 0;
+        padding: 0;
+        width: 0;
+      }
+
+      .mat-checkbox-background {
+        top: -2px;
+      }
+
+      .mat-checkbox-label {
+        height: 40px;
+        line-height: 40px;
+        padding: 0;
+      }
+
+      input[type="checkbox"] {
+        display: none;
+      }
+    }
+
+    .mat-input-underline {
+      bottom: 0;
+      z-index: -1;
+    }
+
+    .mat-checkbox-layout .mat-checkbox-label {
+      line-height: 40px;
+    }
+
+    .mat-focused .mat-form-field-placeholder {
+      color: $gray3;
+    }
+
+    .mat-form-field-placeholder {
+      color: $gray3;
+    }
+
+    .mat-checkbox-background {
+      background-color: $white !important;
+      border-radius: 4px !important;
+      box-shadow: 0 0 0 1px $gray6 inset;
+      height: 24px !important;
+      fill: $black;
+      width: 24px !important;
+    }
+
+    .mat-checkbox-label {
+      color: $white;
+      line-height: 40px;
+      margin-left: 5px;
+      padding-top: 5px;
+    }
+
+    .mat-checkbox-checkmark-path {
+      stroke: $black !important;
+    }
+
+    .mat-checkbox-frame {
+      transition: none;
+      border: none;
+    }
+
+    .mat-select {
+      padding: 6px 0 0 0;
+    }
+
+    .mat-form-field-infix {
+      padding: 0;
+      line-height: 2.125;
+      border-top: 0;
+      height: 40px;
+      color: $gray3;
+      border-top: 0;
+    }
+
+    .mat-form-field-flex {
+      display: flex;
+      align-items: center !important;
+      width: 100%;
+    }
+
+  }
+}

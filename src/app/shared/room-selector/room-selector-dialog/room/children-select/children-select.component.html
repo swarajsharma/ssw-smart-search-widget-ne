@@ -1,0 +1,13 @@
+<div class="child-age" fxLayoutGap="10px" [ngClass]="(selectedChildValues.childAge == '?') ? 'show' : 'hide'">
+  <mat-label>
+    {{ 'searchWidget.occupation.child' | translate }} {{ selectedChildValues?.childNo }} {{ 'searchWidget.occupation.age' | translate
+    }}
+  </mat-label>
+  <mat-select placeholder="?" [(value)]="selectedChildValues.childAge" (selectionChange)="onChange()">
+    <mat-option value="?">?</mat-option>
+    <mat-option value="0">&lt;2</mat-option>
+    <mat-option *ngFor="let option of getCountOptions(); let i of index;" value="{{ i + infantAgeLimit }}">
+      {{ i + infantAgeLimit }}
+    </mat-option>
+  </mat-select>
+</div>

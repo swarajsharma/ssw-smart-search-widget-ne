@@ -1,0 +1,202 @@
+{
+  "searchWidget": {
+    "holidays": "Holidays",
+    "hotel": "Hotell",
+    "cityBreak": "City Break",
+    "origin": "Origin",
+    "destination": "Resmål",
+    "checkIn": "Incheckning",
+    "checkOut": "Utcheckning",
+    "under": "Under",
+    "ageQuery": "Ange ålder vid hemkomst",
+    "childAge": "Child 1 Age",
+    "hotelLocation": "Stad, hotell, flygplats, tågstation",
+    "cityBreakLocation": "Stad eller flygplats",
+    "advanceOption": {
+      "directFlightsOnly": "Direct flights only",
+      "preferredClass": "Preferred class",
+      "any": "Any",
+      "economy": "Economy",
+      "business": "Business",
+      "firstClass": "First class",
+      "premium": "Premium"
+    },
+    "occupation": {
+      "room": "Rum",
+      "rooms": "Rum",
+      "adult": "Vuxna",
+      "adults": "Vuxna",
+      "childrenLabel": "Barn",
+      "children": "Under 17 år",
+      "addRoom": "Add new room",
+      "removeRoom": "Ta bort",
+      "guest": "Gäster",
+      "guests": "Gäster",
+      "close": "Stäng",
+      "maxRoomsError": "Max 3 rum per bokning",
+      "done": "Klar",
+      "editSearch": "Ändra sökning",
+      "bookingQuery": "Vill du boka en resa för mer än nio personer?",
+      "contactMsg": "Please call 01733 224 841 to speak to one of our advisors who will help you with your holiday needs.",
+      "childAgeNotSelected": "Vänligen skriv barnets ålder",
+      "childAgeInfo": "What are their ages on date of return?",
+      "child": "Barn",
+      "age": "Age",
+      "moreInfantsThanAdultsError": "Fler barn än vuxna?",
+      "moreInfantsThanAdultsMessage": "Please call 01733 224 808 to speak to one our advisors who will help you with your holiday needs."
+    }
+  },
+  "searchBar": {
+    "title": "Find my perfect holiday",
+    "from": "Flying from",
+    "to": "Where to",
+    "when": "When",
+    "duration": "For how long?",
+    "durationOptions": {
+      "0": "All Durations",
+      "1-6": "Less than 7 Nights",
+      "8-13": "8-13 Nights",
+      "15-28": "More than 14 Nights",
+      "1": "1 Night",
+      "2": "2 Nights",
+      "3": "3 Nights",
+      "4": "4 Nights",
+      "5": "5 Nights",
+      "6": "6 Nights",
+      "7": "7 Nights",
+      "8": "8 Nights",
+      "9": "9 Nights",
+      "10": "10 Nights",
+      "11": "11 Nights",
+      "12": "12 Nights",
+      "13": "13 Nights",
+      "14": "14 Nights",
+      "21": "21 Nights",
+      "28": "28 Nights"
+    },
+    "flexible": "I'm flexible +/- 3 days",
+    "search": "Search",
+    "searchHotelCB": "Sök",
+    "searchCityBreak": "Search",
+    "apply": "Apply",
+    "airports": {
+      "placeholder": "Any Airport",
+      "suggestions": {
+        "empty": "Sorry, we can't find your airport"
+      },
+      "popular": {
+        "title": "Select the airports you wish to fly from",
+        "notAvailable": "We do not fly from this airport to your current selected destination"
+      }
+    },
+    "destinations": {
+      "default": "All Destinations",
+      "placeholder": "Any Destination",
+      "suggestions": {
+        "empty": "Sorry we don’t recognise the destination, <a href='https://www.thomascook.com/holidays/city-breaks/#intcmp=SearchWidget_CityNotFoundError' title='Sorry we don’t recognise the destination, click here for more city options.' target='_blank' rel='noopener noreferrer'>click here</a> for more city options.",
+        "destinations": "Destinations",
+        "hotels": "Hotell"
+      },
+      "popular": {
+        "title": "Select from our most popular holiday destinations",
+        "notAvailable": "We do not fly to this destination from your currently selected airport"
+      }
+    },
+    "occupation": {
+      "room": "Room",
+      "rooms": "Rooms",
+      "adult": "Vuxna",
+      "adults": "Vuxna",
+      "childrenLabel": "Barn",
+      "children": "Under 17 år",
+      "addRoom": "Add new room",
+      "removeRoom": "Ta bort",
+      "guest": "Gäster",
+      "guests": "Gäster",
+      "close": "Stäng",
+      "maxRoomsError": "Max 3 rum per bokning",
+      "done": "Klar",
+      "editSearch": "Ändra sökning",
+      "maxGuestError": "Vill du boka en resa för mer än nio personer? Ring till våra reserådgivare på 0771 995 995, så hjälper vi dig med dina semesterönskemål.",
+      "childAgeNotSelected": "Vänligen skriv barnets ålder",
+      "moreInfantsThanAdultsError": "Fler barn än vuxna?",
+      "moreInfantsThanAdultsMessage": "Ring till våra reserådgivare på 0771 995 995, så hjälper vi dig med dina semesterönskemål."
+    },
+    "tooltip": {
+      "title": "List"
+    },
+    "datepicker": {
+      "placeholder": "I don't mind"
+    }
+  },
+  "search": {
+    "holidaysFound": "holiday(s) found",
+    "facets": {
+      "boardType": "Board Basis",
+      "priceRange": "Price per Adult"
+    }
+  },
+  "tabs": {
+    "packages": {
+      "title": "Holidays"
+    },
+    "hotel": {
+      "title": "Hotell",
+      "location": "Destination, hotel name, airport, train station"
+    },
+    "citybreaks": {
+      "title": "City Breaks",
+      "origin": "Origin:",
+      "destination": "Destination:",
+      "location": "City or airport"
+    }
+  },
+  "recentSearches": {
+    "singular": "You have {length} recent search",
+    "plural": "You have {length} recent searches"
+  },
+  "datepicker": {
+    "searchAllOf": "Search all of",
+    "searchAnyDate": "Search Any Date",
+    "shortMonthNames": {
+      "Jan": "Jan",
+      "Feb": "Feb",
+      "Mar": "Mar",
+      "Apr": "Apr",
+      "May": "May",
+      "Jun": "Jun",
+      "Jul": "Jul",
+      "Aug": "Aug",
+      "Sep": "Sep",
+      "Oct": "Oct",
+      "Nov": "Nov",
+      "Dec": "Dec"
+    },
+    "wholeMonthNames": {
+      "Jan": "Jan",
+      "Feb": "Feb",
+      "Mar": "Mar",
+      "Apr": "Apr",
+      "May": "May",
+      "Jun": "Jun",
+      "Jul": "Jul",
+      "Aug": "Aug",
+      "Sep": "Sep",
+      "Oct": "Oct",
+      "Nov": "Nov",
+      "Dec": "Dec"
+    },
+    "daysOfWeek": {
+      "SUN": "SUN",
+      "MON": "MON",
+      "TUE": "TUE",
+      "WED": "WED",
+      "THU": "THU",
+      "FRI": "FRI",
+      "SAT": "SAT"
+    },
+    "weekStartsOn": "1",
+    "noAvailability": "No availability for your holiday in this month",
+    "nextAvailableDateButton": "Find next availability"
+  }
+}

@@ -1,0 +1,26 @@
+@import '../../../styles/base/colors';
+
+.textcolor {
+  color: $gray2;
+  line-height: 40px;
+  height: 40px;
+}
+
+::ng-deep {
+  .mat-option {
+    //line-height: 2;
+    letter-spacing: normal;
+    color: $cerulean;
+    align-content: center;
+    height: auto !important;
+  }
+
+  .mat-option-text {
+    line-height: 2;
+  }
+
+  .mat-autocomplete-panel {
+    max-height: 490px;
+    overflow: auto;
+  }
+}

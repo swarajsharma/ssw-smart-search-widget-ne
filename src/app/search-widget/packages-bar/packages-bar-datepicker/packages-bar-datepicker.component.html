@@ -1,0 +1,43 @@
+<div class="packages-bar-datepicker">
+  <mat-form-field appearance="outline"
+    (click)="toggleDatePicker()"
+    shouldLabelFloat="false">
+    <label class="datepicker-label" [for]="dateInput.id">{{ 'searchBar.when' | translate }} :</label>
+    <div class="datepicker-input-wrapper">
+      <input #dateInput
+        [ngClass]="{ 'show-element': showInputElement }"
+        id="date-when"
+        title="When"
+        name="date-when"
+        readonly
+        matInput
+        color="primary"
+        (dateChange)="onDateChange($event)"
+        [matDatepicker]="picker"
+        [matDatepickerFilter]="dateFilter.bind(this)"
+        [max]="maxDate"
+        [min]="minDate">
+      <div *ngIf="control.value === 'any' && !showInputElement"
+        class="datepicker-placeholder">
+        {{ 'searchBar.datepicker.placeholder' | translate }}
+      </div>
+      <div *ngIf="control.value !== 'any' && !showInputElement"
+        class="datepicker-placeholder">
+        {{ control.value }}
+      </div>
+      <mat-icon>calendar_today</mat-icon>
+    </div>
+    <button class="datepicker-clearbtn"
+      *ngIf="showClearButton"
+      (click)="onClearDate($event)">
+      <mat-icon>clear</mat-icon>
+    </button>
+    <mat-datepicker #picker
+      [touchUi]="(deviceService.isMobileLandscape$ | async) || (deviceService.isMobile$ | async)"
+      [panelClass]="panelClass"
+      (opened)="updateCalendarAvailability()"
+      [calendarHeaderComponent]="calendarHeaderComponent"
+      disabled="false">
+    </mat-datepicker>
+  </mat-form-field>
+</div>

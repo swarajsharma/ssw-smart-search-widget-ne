@@ -1,0 +1,31 @@
+<mat-form-field floatLabel="never" class="form-group">
+  <label matPrefix matlabel class="v-centered-element">
+    <mat-icon class="tc-icon blue app-input-icon">
+      location_on
+    </mat-icon>
+    <strong class="itext">{{ fieldTitle }}</strong>
+  </label>
+
+  <input autofocus class="textcolor" matInput
+    [placeholder]="placeHolder"
+    aria-label="Going To"
+    [matAutocomplete]="auto"
+    [formControl]="locationCtrl"
+    id="locationCtrl"
+    placeholder="{{ fieldTitle }}">
+
+  <mat-autocomplete #auto="matAutocomplete" class="bg" [ngClass]="isClassToShow ? 'smartfill-arrow-box' : ''" dropdown-arrow="true" scroll="false"> <!--  [ngClass]="(filteredLoctions) ? 'smartfill-arrow-box' : ''"-->
+    <mat-option *ngFor="let location of filteredLoctions"
+      [value]="location.Keyword"
+      (onSelectionChange)="setSelectedLocation(location)">
+      <mat-icon matPrefix class="tc-icon blue">
+        {{ locationIcons[location.Type] }}
+      </mat-icon>
+      <span>{{ location.Keyword }}</span>
+    </mat-option>
+  </mat-autocomplete>
+
+  <mat-error *ngIf="locationCtrl.hasError('required')">
+    {{ getErrorMessage() }}
+  </mat-error>
+</mat-form-field>

@@ -1,0 +1,18 @@
+<table class="datepicker-full-width" cellspacing="0">
+  <tr>
+    <td>
+      <mat-form-field class="picker1">
+        <input matInput [matDatepicker]="picker1" placeholder="Chfffffffeck-in" [formControl]="date" style="margin-top: 0.5em;">
+        <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field>
+    </td>
+    <td>
+      <mat-form-field class="picker1">
+        <input matInput [matDatepicker]="picker2" placeholder="Check-out" [formControl]="serializedDate" style="margin-top: 0.5em;">
+        <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+      </mat-form-field>
+    </td>
+  </tr>
+</table>

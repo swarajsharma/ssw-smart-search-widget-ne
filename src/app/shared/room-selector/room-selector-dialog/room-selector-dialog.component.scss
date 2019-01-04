@@ -1,0 +1,237 @@
+@import '../../../../styles/base/colors';
+@import '../../../../styles/base/typography';
+@import "../../../../styles/base/screens";
+
+$config: mat-typography-config();
+
+:host {
+  max-width: 320px;
+  width: 100%;
+
+  .room-selector-actions {
+    background-color: $white;
+    box-shadow: 0 -2px 6px 0 $gray9;
+    border-top: solid 1px $gray6;
+    flex-wrap: nowrap;
+    height: 60px;
+    padding: 0 10px;
+    margin: 0;
+  }
+
+  .room-selector-summary {
+    margin-right: 5px;
+    max-height: 40px;
+    box-shadow: 0 0 0 1px $gray6;
+    border-radius: 4px;
+    padding: 0;
+
+    label {
+      padding-left: 5px;
+    }
+  }
+
+}
+
+.room-selector {
+  align-content: center;
+  width: 100%;
+  min-height: 568px;
+  max-height: 568px;
+  object-fit: contain;
+  position: relative;
+  overflow: hidden;
+}
+
+.room-selector-overflow {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 445px;
+}
+
+.overlay-header {
+  width: 100%;
+  height: 40px;
+  background-color: $gray2;
+  font: $white;
+  text-align: right;
+  clear: both;
+}
+
+.room-component {
+  margin: 10px 10px 0;
+  position: relative;
+  height: auto;
+  overflow: visible;
+}
+
+::ng-deep {
+
+  .room-selector-panel {
+
+    max-width: 85vw;
+
+    .mat-dialog-container {
+      padding: 0;
+    }
+
+    .mat-dialog-content {
+      padding: 0;
+      max-height: none;
+    }
+
+    .mat-expansion-panel-body {
+      padding: 0 !important;
+    }
+
+    .mat-button {
+      line-height: 2.5;
+      text-align: center;
+      color: $cerulean;
+    }
+  }
+}
+
+.room-close {
+  width: 33px;
+  color: $white;
+  margin: 0 10px 11px 0;
+
+  span {
+    padding-right: 10px;
+  }
+}
+
+.rectangle-26 {
+  height: 40px;
+  border-radius: 3px;
+  background-color: $white;
+  border: solid 1px $gray6;
+  margin-left: 10px;
+}
+
+.rectangle {
+  width: 120px;
+  height: 33px;
+  border-radius: 4px;
+  box-shadow: 0 1px 0 0 $lima-dark;
+  background-color: $lima;
+  border: solid 1px $lima;
+
+  ::ng-deep {
+    .mat-icon {
+      height: 14px;
+      width: 14px;
+      padding-right: 10px !important;
+      float: right;
+    }
+  }
+}
+
+.layer {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+  background-color: $white;
+}
+
+.btn-whit-blue {
+  height: 33px;
+  min-height:33px;
+  border-radius: 4px;
+  background-color: $white;
+  border: solid 1px $gray6;
+  margin: 0 10px;
+  width: 94%;
+}
+
+.rectangle-27 {
+  padding: 3px 0 4px;
+  margin-right: 10px;
+}
+
+.btn-green-small {
+  height: 40px;
+  border-radius: 4px;
+  box-shadow: 0 1px 0 0 $lima-dark;
+  background-color: $lima;
+  border: solid 1px $lima;
+  font-size: mat-font-size($config, subheading-1);
+  font-weight: 600;
+  text-align: center;
+  color: $white;
+  line-height: 1;
+  margin-left:5px;
+
+  ::ng-deep {
+    .room-selector-panel {
+      .mat-button {
+        line-height: 2.5;
+        text-align: center;
+        color: $cerulean;
+      }
+    }
+  }
+}
+
+.btn-green-small:disabled,
+.btn-green-small[disabled] {
+  box-shadow: 0 1px 0 0 $gray6;
+  background-color: $gray7;
+  border: solid 1px $gray6;
+  color: $gray3;
+}
+
+.info-blue {
+  height: 34px;
+  border-radius: 3px;
+  background-color: $blue2;
+  margin: 0 10px;
+}
+
+.info-blue-max-height{
+  max-height: 34px;
+}
+
+.info-icon-blue-bg {
+  background-color: $blue1;
+  color: $white;
+  float: left;
+  padding: 5px 0 5px 10px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.info-orange {
+  background-color: $bright-orange;
+  min-height: 34px;
+  border-radius: 3px;
+  margin: 0 10px;
+}
+
+.info-orange-max-height{
+  max-height: 34px;
+}
+
+.info-icon-orange-bg {
+  width: 36px;
+  min-height: 32px;
+  border-radius: 3px;
+  background-color: $sun;
+  border: solid 1px $sun;
+  float: left;
+  margin-right: 10px;
+}
+
+.orange-border {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  background-color: $white;
+  border: solid 1px $sun;
+  padding: 10px;
+  color: $gray1;
+}
+
+.child-not-selected{
+  max-height: 34px;
+  margin-bottom:100px;
+}

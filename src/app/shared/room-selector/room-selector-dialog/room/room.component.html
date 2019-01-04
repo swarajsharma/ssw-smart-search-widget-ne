@@ -1,0 +1,80 @@
+<div fxLayout="column" fxLayoutGap="10px">
+
+  <mat-expansion-panel [expanded]="isExpanded" hideToggle="true" [disabled]="isDisabled" (opened)="setExpansion(roomNumber)"
+    class="mat-elevation-z0 room flex" fxLayout="column">
+
+    <mat-expansion-panel-header fxLayout="row" fxFlex="1 0 auto">
+      <mat-panel-title fxFlex="1 0 auto">
+        <span class="rooms-number-txt">{{ 'searchWidget.occupation.room' | translate }} {{ roomNumber }}</span>
+        <span class="guests-number-txt"> - {{ totalGuests }} {{ (totalGuests > 1 ? 'searchWidget.occupation.guests' :
+          'searchWidget.occupation.guest') | translate }}</span>
+      </mat-panel-title>
+      <mat-panel-description fxFlex="1 1 auto">
+        <button mat-button *ngIf="roomNumber > 1 && isExpanded" (click)="removePanel(roomNumber)">
+          {{ 'searchWidget.occupation.removeRoom' | translate }}
+        </button>
+        <button mat-button *ngIf="!isExpanded">
+          {{ 'searchWidget.occupation.editSearch' | translate }}
+        </button>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <div class="room-pax-count" fxLayoutGap="10px" fxLayout="column">
+      <div class="row" fxLayout="row">
+        <div class="itext-normal adults">
+          <label class="">{{ 'searchWidget.occupation.adults' | translate }}</label>
+        </div>
+        <div>
+          <button class="square-icon" (click)="removeAdults()" owat-room-remove-adult>
+            <mat-icon class="tc-icon">
+              remove
+            </mat-icon>
+          </button>
+        </div>
+        <div class="itext-normal count">
+          <label class="layer"> {{ totalAdults }} </label>
+        </div>
+        <div>
+          <button class="square-icon" (click)="addAdults()" owat-room-add-adult>
+            <mat-icon class="tc-icon">
+              add
+            </mat-icon>
+          </button>
+        </div>
+      </div>
+      <div class="row" fxLayout="row">
+        <div class="itext-normal adults line-height121">
+          <span class="">{{ 'searchWidget.occupation.childrenLabel' | translate }}</span>
+          <br />
+          <span class="font12">{{ 'searchWidget.occupation.children' | translate }}</span>
+        </div>
+        <div>
+          <button class="square-icon" (click)="removeChildren()" owat-room-remove-child>
+            <mat-icon class="tc-icon">
+              remove
+            </mat-icon>
+          </button>
+        </div>
+        <div class="itext-normal count">
+          <label class="layer">{{ totalChildren }}</label>
+        </div>
+        <div>
+          <button class="square-icon" (click)="addChildren()" owat-room-add-child>
+            <mat-icon class="tc-icon">
+              add
+            </mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </mat-expansion-panel>
+
+  <div *ngIf="totalChildren > minChildren && isExpanded" class="children-details arrow-box" fxLayout="row" fxLayoutGap="10px">
+    <div fxFlex="1 1 auto">
+      <p class="font-strong">{{ 'searchWidget.occupation.childAgeInfo' | translate }}</p>
+      <sw-children-select class="child-age" *ngFor="let option of getCountOptions(); let i of index;"
+        [selectedChildValues]="children[i]" [maxChildAge]="selectedDefaults.maxChildAge" (changedChild)="setNewChild($event)">
+      </sw-children-select>
+    </div>
+  </div>
+  

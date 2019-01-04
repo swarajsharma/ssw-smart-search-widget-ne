@@ -1,0 +1,177 @@
+{
+  "searchWidget": {
+    "holidays": "Vacances",
+    "hotel": " Hôtel",
+    "cityBreak": " Citytrip",
+    "origin": "De",
+    "destination": "À",
+    "checkIn": "Date de départ",
+    "checkOut": "Date de retour",
+    "under": "<",
+    "ageQuery": "Quels sont leurs âges à la date du retour ?",
+    "childAge": "Age enfant 1",
+    "hotelLocation": "Destination, nom de l’hôtel, curiosités",
+    "cityBreakLocation": "Ville ou aéroport",
+    "advanceOption": {
+      "directFlightsOnly": "Vols directs uniquement",
+      "preferredClass": "Classe",
+      "any": "Tout",
+      "economy": "Classe économique",
+      "business": "Affaires",
+      "firstClass": "Première classe",
+      "premium":"Service Premium"
+    },
+    "occupation": {
+      "room": "Chambre",
+      "rooms": "Pièces",
+      "adult": "adulte",
+      "adults": "Adultes",
+      "childrenLabel": "Enfants",
+      "children": "≤ 17s",
+      "addRoom": "Ajouter une chambre",
+      "removeRoom": "Supprimer",
+      "guest": "Guest",
+      "guests": "Voyageurs",
+      "close": "Fermer",
+      "maxRoomsError": "Maximum de 3 chambres appliqué",
+      "done": "Terminé",
+      "editSearch": "Édite",
+      "bookingQuery": "Vous partez en vacances avec plus de 9 personnes ?",
+      "contactMsg": "Veuillez nous contacter au 01733 224 841 pour parler avec un de nos conseillers qui vous aidera avec vos besoins de vacances",
+      "childAgeNotSelected": "Veuillez préciser l'âge de l'enfant",
+      "childAgeInfo": "Quels sont leurs âges à la date du retour ?",
+      "child": "Enfant",
+      "age": "Âge",
+      "moreInfantsThanAdultsError": "Plus de bébés (0-2 ans) que d'adultes ?",
+      "moreInfantsThanAdultsMessage": "Nos conseillers vous aident avec plaisir via le 070 233 906 pour vos besoins de vacances."
+    }
+  },
+  "searchBar": {
+    "from": "Départ de",
+    "to": "Où",
+    "when": "Quand",
+    "duration": "Durée",
+    "durationOptions": {
+      "0": "Toutes les durees",
+      "2-3": "2-3 nuits",
+      "4-7": "4-7 nuits",
+      "8-14": "8-14 nuits",
+      "15-21": "14+ nuits",
+      "1": "1 nuit",
+      "2": "2 nuits",
+      "3": "3 nuits",
+      "4": "4 nuits",
+      "5": "5 nuits",
+      "7": "7 nuits",
+      "8": "8 nuits",
+      "9": "9 nuits",
+      "10": "10 nuits",
+      "11": "11 nuits",
+      "12": "12 nuits",
+      "13": "13 nuits",
+      "14": "14 nuits",
+      "21": "21 nuits"
+    },
+    "flexible": "Flexibilité de +/- 3 jours",
+    "search": "Rechercher vacances en avion",
+    "searchHotelCB": "Rechercher",
+    "searchCityBreak": "Rechercher",
+    "apply": "Voilà",
+    "destinations": {
+      "default": "Toutes les destinations",
+      "placeholder": "Recherchez un pays, un lieu ou un hôtel",
+      "suggestions": {
+        "empty": "Désolé, nous ne connaissons pas cette destination, <a href='https://www.neckermann.be/fr/citytrip/' title='Désolé, nous ne connaissons pas cette destination, cliquez ici pour découvrir nos citytrip' target='_blank' rel='noopener noreferrer'>cliquez ici</a> pour découvrir nos citytrip",
+        "destinations": "Destinations",
+        "hotels": "Hotels"
+      },
+      "popular": {
+        "title": "Choisissez l'une des destinations populaires",
+        "notAvailable": "We do not fly to this destination from your currently selected airport"
+      }
+    },
+    "occupation": {
+      "room": "Room",
+      "adults": "Adults",
+      "children": "Under 17s",
+      "addRoom": "Add a new room",
+      "removeRoom": "Remove a room"
+    },
+    "tooltip" : {
+      "title": "Liste"
+    },
+    "datepicker" : {
+      "placeholder": "Toutes les dates"
+    }
+  },
+  "search": {
+    "holidaysFound": "holiday(s) found",
+    "facets": {
+      "boardType": "Board Basis",
+      "priceRange": "Price per Adult"
+    }
+  },
+  "tabs": {
+    "packages": {
+      "title": "Séjours"
+    },
+    "hotel": {
+      "title": "Hôtels",
+      "location": "Destination, hotel name, airport, train station"
+    },
+    "citybreaks": {
+      "title": "Citytrip",
+      "origin": "Origin:",
+      "destination": "Destination:",
+      "location": "City or airport"
+    }
+  },
+  "recentSearches": {
+    "singular": "Vous avez {length} recherche récente",
+    "plural": "Vous avez {length} recherches récentes"
+  },
+  "datepicker": {
+    "searchAllOf": "Départ en",
+    "searchAnyDate": "Supprimer la sélection",
+    "shortMonthNames": {
+      "Jan": "jan",
+      "Feb": "féb",
+      "Mar": "mar",
+      "Apr": "avr",
+      "May": "mai",
+      "Jun": "juin",
+      "Jul": "juil",
+      "Aug": "août",
+      "Sep": "sep",
+      "Oct": "oct",
+      "Nov": "nov",
+      "Dec": "déc"
+    },
+    "wholeMonthNames": {
+      "Jan": "jan",
+      "Feb": "féb",
+      "Mar": "mar",
+      "Apr": "avr",
+      "May": "mai",
+      "Jun": "juin",
+      "Jul": "juil",
+      "Aug": "août",
+      "Sep": "sep",
+      "Oct": "oct",
+      "Nov": "nov",
+      "Dec": "déc"
+    },
+    "daysOfWeek": {
+      "SUN": "LU",
+      "MON": "MA",
+      "TUE": "MER",
+      "WED": "JEU",
+      "THU": "VE",
+      "FRI": "SA",
+      "SAT": "DI"
+    },
+    "weekStartsOn": "1",
+    "noAvailability": "Plus de disponibilités pour ce mois",
+    "nextAvailableDateButton": "Montrez prochaine disponibilité"
+  }
+}

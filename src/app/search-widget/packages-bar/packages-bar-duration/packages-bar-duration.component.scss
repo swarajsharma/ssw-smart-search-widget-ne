@@ -1,0 +1,74 @@
+@import '../../../../styles/base/colors';
+
+:host {
+  background: none;
+
+  mat-form-field {
+    background: $white;
+    border-radius: 4px;
+    box-shadow: 0 0 0 1px $gray6 inset;
+    margin: 0 5px;
+    max-width: calc(100% - 5px);
+  }
+
+  mat-select {
+    border: 0;
+    padding-left: 10px;
+    max-width: calc(100% - 15px);
+  }
+
+  ::ng-deep {
+    .mat-form-field-appearance-legacy {
+      .mat-form-field-wrapper {
+        padding: 0;
+      }
+
+      .mat-form-field-underline {
+        height: 0;
+
+        .mat-form-field-ripple {
+          height: 0;
+          transform: none;
+          transition: none;
+        }
+      }
+    }
+  }
+}
+
+::ng-deep {
+  .select-duration-panel {
+    .mat-option {
+      .mat-option-text {
+        color: $black;
+        padding-left: 30px;
+        position: relative;
+      }
+
+      .mat-select-value {
+        padding-left: 10px;
+      }
+
+      &.mat-selected {
+
+        .mat-option-text {
+
+          &::before {
+            align-items: center;
+            content: 'done';
+            display: flex;
+            font-family: 'Material Icons';
+            font-feature-settings: 'liga';
+            font-size: 24px;
+            height: 30px;
+            left: 0;
+            position: absolute;
+            width: 30px;
+          }
+        }
+      }
+    }
+  }
+}
+
+

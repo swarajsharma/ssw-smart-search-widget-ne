@@ -1,0 +1,21 @@
+@import '../../../styles/base/typography';
+@import '../../../styles/base/colors';
+
+:host {
+
+  button {
+    box-shadow: none;
+  }
+
+  .rooms-number-txt {
+    color: $black;
+    font-weight: $bold;
+    line-height: 40px;
+  }
+
+  .guests-number-txt {
+    color: $black;
+    line-height: 40px;
+    margin-left: 5px;
+  }
+}

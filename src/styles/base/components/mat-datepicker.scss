@@ -1,0 +1,7 @@
+@import '../colors';
+
+@mixin ow-mat-datepicker() {
+  .mat-input-element {
+    color: $gray2 !important;
+  }
+}

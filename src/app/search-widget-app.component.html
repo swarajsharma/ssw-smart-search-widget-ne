@@ -1,0 +1,18 @@
+<mat-tab-group #tabGroup
+  [@.disabled]="true"
+  [selectedIndex]="selectedTabIndex || tabsConfiguration ? tabsConfiguration.selectedIndex : 0"
+  (selectedTabChange)="selectedTabChanged($event)">
+
+  <ng-container *ngIf="tabsConfiguration && tabsConfiguration.tabs.length">
+    <mat-tab *ngFor="let tab of tabsConfiguration.tabs; let index = index">
+      <ng-template matTabLabel>
+        <span class="tab-label-wrapper" swOwat [owatId]="tab.owData.id">
+          <mat-icon>{{ tab.tabIcon }}</mat-icon> {{ tab.tabLabelKey | translate }}
+        </span>
+      </ng-template>
+      <ng-template matTabContent>
+        <ng-container *ngComponentOutlet="stringToComponentMap[tab.component]"></ng-container>
+      </ng-template>
+    </mat-tab>
+  </ng-container>
+</mat-tab-group>

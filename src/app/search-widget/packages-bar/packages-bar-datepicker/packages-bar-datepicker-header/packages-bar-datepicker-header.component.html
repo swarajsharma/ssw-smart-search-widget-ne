@@ -1,0 +1,55 @@
+<div class="datepicker-header-wrapper">
+  <div class="datepicker-options">
+    <button mat-flat-button
+      (click)="onSearchAllOf()">
+      {{'datepicker.searchAllOf' | translate}} {{ getWholeMonthText(selectedMonth) }}
+    </button>
+    <button mat-flat-button
+      (click)="onSearchAnyDateClick()">
+      {{ 'datepicker.searchAnyDate' | translate }}
+    </button>
+  </div>
+
+  <div class="datepicker-navigation">
+    <button (click)="onPreviousClick()">
+      <mat-icon>navigate_before</mat-icon>
+    </button>
+    <div class="select-wrapper">
+      <mat-select
+        panelClass="datepicker-select-panel"
+        placeholder="Month"
+        (selectionChange)="onMonthSelectionChange($event)"
+        [(value)]="selectedMonth">
+        <mat-option *ngFor="let month of months"
+          [value]="month.value"
+          [disabled]="month.disabled">
+          {{ getShortMonthName(month.viewValue) }}
+        </mat-option>
+      </mat-select>
+    </div>
+    <div class="select-wrapper">
+      <mat-select
+        panelClass="datepicker-select-panel"
+        placeholder="Year"
+        (selectionChange)="onYearSelectionChange($event)"
+        [(value)]="selectedYear">
+        <mat-option *ngFor="let year of years" [value]="year.value" [disabled]="year.disabled">
+          {{year.viewValue}}
+        </mat-option>
+      </mat-select>
+    </div>
+    <button (click)="onNextClick()">
+      <mat-icon>navigate_next</mat-icon>
+    </button>
+  </div>
+
+  <div class="datepicker-nextdate-wrapper"
+    *ngIf="!hasAvailableDatesInCurrentMonth">
+    <p class="datepicker-no-availability">{{ 'datepicker.noAvailability' | translate }}</p>
+    <button mat-raised-button
+      color="primary"
+      (click)="onNextAvailableDate()">
+      {{ 'datepicker.nextAvailableDateButton' | translate}}
+    </button>
+  </div>
+</div>

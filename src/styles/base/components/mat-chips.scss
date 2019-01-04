@@ -1,0 +1,59 @@
+@import '~@angular/material/theming';
+@import '../colors';
+
+$ow-mat-chips: (
+  50: $white,
+  100: $gray8,
+  200: $gray7,
+  300: $gray6,
+  400: $gray5,
+  500: $sun,
+  600: $gray3,
+  700: $gray2,
+  800: $gray1,
+  900: $black,
+  A100: $white,
+  A200: $gray1,
+  A400: $gray5,
+  A700: $gray2,
+  contrast: (
+    50: $opacity-black-4,
+    100: $opacity-black-4,
+    200: $opacity-black-4,
+    300: $opacity-black-4,
+    400: $opacity-black-4,
+    500: $gray1,
+    600: $white-87-opacity,
+    700: $white-87-opacity,
+    800: $white-87-opacity,
+    900: $white-87-opacity,
+    A100: $opacity-black-4,
+    A200: $opacity-black-4,
+    A400: $opacity-black-4,
+    A700: $white-87-opacity,
+  )
+);
+
+$ow-mat-chips-primary: mat-palette($ow-mat-chips);
+$ow-mat-chips-accent: mat-palette($ow-mat-chips);
+$ow-mat-chips-warn: mat-palette($mat-red);
+
+$ow-mat-chips-theme: mat-light-theme($ow-mat-chips-primary, $ow-mat-chips-accent, $ow-mat-chips-warn);
+
+@mixin ow-mat-chips() {
+  .mat-chip:not(.mat-chip-selected) {
+    background-color: $opacity-black-1;
+  }
+
+  .mat-form-field-label,
+  .mat-chip-input {
+    color: $black !important;
+  }
+
+  // Allow 80px space for short Destination/Airport names
+  input.mat-chip-input {
+    width: 80px !important;
+    height: 20px !important;
+    flex: 1 0 80px !important;
+  }
+}

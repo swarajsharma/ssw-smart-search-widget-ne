@@ -1,0 +1,91 @@
+<mat-form-field (click)="setFocusOnInput($event)">
+
+  <mat-chip-list #chipList>
+    <mat-chip *ngIf="!hasSelectedEntities && !hideChips"
+      disabled="true"
+      selectable="false"
+      selected="false">
+      {{empty}}
+    </mat-chip>
+
+    <ng-container *ngIf="!hideChips">
+      <mat-chip *ngFor="let entity of (selectedEntities$ | async)"
+        class="selected-chip"
+        disabled="true"
+        removable="true"
+        selectable="false"
+        (removed)="removeEntity(entity)">
+        {{entity.title}}
+        <mat-icon matChipRemove>cancel</mat-icon>
+      </mat-chip>
+    </ng-container>
+
+    <ng-container
+      *ngIf="hideChips && hasMoreThanOneEntity && !inputHasFocus">
+      <div class="multiple-locations">{{ getShortFormTextForLocations() }}</div>
+    </ng-container>
+
+    <input #metaSearchInput
+      [ngClass]="{ 'show-element': hideChips && !hasMoreThanOneEntity || inputHasFocus }"
+      (focus)="onFocus()"
+      (blur)="onBlur()"
+      [placeholder]="placeholder"
+      matChipInputAddOnBlur="true"
+      [matChipInputFor]="chipList"
+      [matAutocomplete]="autocomplete">
+  </mat-chip-list>
+
+  <button class="popular-locations-btn"
+    *ngIf="hasPopularLocations"
+    (click)="openPredefinedListDialog($event)">
+    <mat-icon>{{ type === 'airports' ? 'local_airport' : 'location_on' }}</mat-icon>
+    <span class="popular-btn-label">{{ 'searchBar.tooltip.title' | translate }}</span>
+  </button>
+
+  <mat-autocomplete #autocomplete="matAutocomplete"
+    (optionSelected)="onAutocompleteItemSelect($event)">
+
+    <mat-optgroup
+      class="popular-tooltip-group"
+      *ngIf="autocompleteList.length > 0"
+      label="Destinations">
+      <mat-option class="popular-tooltip-opt"
+        *ngFor="let item of autocompleteList"
+        [value]="item.code">
+        {{ item.title }}
+      </mat-option>
+    </mat-optgroup>
+
+    <mat-optgroup
+      class="popular-tooltip-group"
+      *ngIf="autocompleteList2.length > 0"
+      label="Hotels">
+      <mat-option class="popular-tooltip-opt"
+        *ngFor="let item of autocompleteList2"
+        [value]="item.code">
+        {{ item.title }}
+      </mat-option>
+    </mat-optgroup>
+
+    <mat-optgroup
+      class="popular-tooltip-group"
+      *ngIf="autocompleteList3.length > 0"
+      label="Airports">
+      <mat-option class="popular-tooltip-opt"
+        *ngFor="let item of autocompleteList3"
+        [value]="item.code">
+        {{ item.title }}
+      </mat-option>
+    </mat-optgroup>
+
+  </mat-autocomplete>
+
+  <div class="message-wrapper" *ngIf="noResultsFound">
+    <div class="message-text">
+      <p>
+        <mat-icon>info</mat-icon>
+        <span [innerHtml]="getDestinationsNotFoundKeyForTranslation() | translate"></span>
+      </p>
+    </div>
+  </div>
+</mat-form-field>

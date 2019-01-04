@@ -1,0 +1,90 @@
+<div class="room-selector flex" fxLayout="column" fxFlex="auto" fxLayoutGap="10px" fxLayoutAlign="space-between stretch">
+
+  <div class="overlay-header">
+    <button mat-button [mat-dialog-close]="rooms" class="room-close" (click)="onNoClick()" cdkFocusInitial>
+      <span>{{ 'searchWidget.occupation.close' | translate }}</span>
+      <mat-icon>clear</mat-icon>
+    </button>
+  </div>
+
+  <div fxLayout="column" fxFlex="auto" fxLayoutGap="10px" fxLayoutAlign="space-between stretch" class="room-selector-overflow flex">
+
+    <div mat-dialog-content class="room-component">
+      <mat-accordion>
+        <sw-room fxLayoutGap="10px" *ngFor="let option of getCountOptions(); let i of index;" roomNumber="{{ i+1 }}"
+          isExpanded="true" [isDisabled]="!isDoneButtonEnabled" [selectedRoomValues]="rooms[i]" [roomProperty]="roomProperties[i]"
+          [selectedDefaults]="data.defaults" (panelChange)="setPanelExpansion($event)" (totalGuestsEmit)="setTotalGuests($event)"
+          (totalChildrenEmit)="setTotalChildren($event)" (panelRemove)="removePanel($event)" (disableDone)="diableDoneButton($event)"
+          owatRoom="{{ i+1 }}">
+        </sw-room>
+      </mat-accordion>
+    </div>
+
+    <div fxLayout="column" fxFlex="auto" fxLayoutGap="10px" class="flex">
+      <button class="btn-whit-blue text-blue-ddc" mat-button *ngIf="rooms.length < maxRooms" (click)="addRooms()"
+        [disabled]="!isDoneButtonEnabled">{{ 'searchWidget.occupation.addRoom' | translate }}
+      </button>
+      <div *ngIf="rooms.length === +maxRooms" class="info-blue font16-white info-orange-max-height">
+        <div class="info-icon-blue-bg" fxLayoutAlign="center center">
+          <mat-icon class="text-none v-align">info</mat-icon>
+        </div>
+        <div class="font16-white">
+          {{ ('searchWidget.occupation.maxRoomsError' | translate ).replace("3",maxRooms)}}
+        </div>
+      </div>
+
+      <div class="info-orange font16-white child-not-selected" *ngIf="!isDoneButtonEnabled && !isMoreInfantsThanAdults"
+        fxLayout="row" fxLayoutGap="10px">
+        <div class="info-icon-orange-bg" fxLayoutAlign="center center">
+          <mat-icon class="text-none v-align">info</mat-icon>
+        </div>
+        <div class="font16-white">
+          {{ 'searchWidget.occupation.childAgeNotSelected' | translate }}
+        </div>
+      </div>
+      <div *ngIf="isMoreInfantsThanAdults" class="info-orange font16-white">
+        <div class="info-icon-orange-bg more-icon-bg" fxLayoutAlign="center center" fxLayout="row" fxLayoutGap="10px">
+          <mat-icon class="text-none v-align">info</mat-icon>
+        </div>
+        <div class="font16-white more-infants-error">
+          {{ 'searchWidget.occupation.moreInfantsThanAdultsError' | translate }}
+        </div>
+        <div class="orange-border">
+          <p>{{ 'searchWidget.occupation.moreInfantsThanAdultsMessage' | translate }}</p>
+        </div>
+      </div>
+
+      <div *ngIf="totalGuests > maxGuests" class="info-orange font16-white info-orange-max-height">
+        <div class="info-icon-orange-bg" fxLayoutAlign="center center" fxLayout="row" fxLayoutGap="10px">
+          <mat-icon class="text-none v-align">info</mat-icon>
+        </div>
+        <div class="font16-line">
+          {{ ('searchWidget.occupation.bookingQuery' | translate ).replace("9",data?.defaults?.maxGuests)}}
+        </div>
+        <div class="orange-border">
+          <p>{{ 'searchWidget.occupation.contactMsg' | translate }}</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div mat-dialog-actions class="room-selector-actions" fxFlex="0 1 auto" fxLayout="row" fxLayoutGap="5px">
+
+    <div class="room-selector-summary" fxLayout="row" fxFlex="1 1 auto" fxFlexAlign="center">
+      <label matSuffix matlabel fxFlexAlign="center">
+        <span class="itext">{{ rooms.length }} {{ (rooms.length > 1 ? 'searchWidget.occupation.rooms' :
+          'searchWidget.occupation.room') | translate }}: </span>
+        <span class="itext-normal">{{ totalGuests }} {{ (totalGuests > 1 ? 'searchWidget.occupation.guests' :
+          'searchWidget.occupation.guest') | translate }}</span>
+      </label>
+      <mat-icon matSuffix fxFlexAlign="center" *ngIf="totalGuests <= maxGuests" class="tc-icon blue">person</mat-icon>
+      <mat-icon matSuffix fxFlexAlign="center" *ngIf="totalGuests > maxGuests" class="tc-icon orange">person</mat-icon>
+    </div>
+
+    <button mat-button fxFlex="1 1 auto" fxFlexAlign="center" [mat-dialog-close]="rooms" class="btn-green-small"
+      cdkFocusInitial (click)="onDone()" [disabled]="totalGuests > data?.defaults?.maxGuests || totalChildren > (data?.isChildLimtPerPage ? data?.defaults?.maxChildren * maxRooms: data?.defaults?.maxChildren) || !isDoneButtonEnabled">
+      {{ 'searchWidget.occupation.done' | translate }}
+    </button>
+  </div>
+</div>

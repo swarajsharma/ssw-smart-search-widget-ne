@@ -1,0 +1,41 @@
+@import '../colors';
+@import '~@angular/material/theming';
+
+$ow-progress-spinner: (
+  50: $white,
+  100: $gray8,
+  200: $gray7,
+  300: $gray6,
+  400: $gray5,
+  500: $lima,
+  600: $gray3,
+  700: $gray2,
+  800: $gray1,
+  900: $black,
+  A100: $white,
+  A200: $gray1,
+  A400: $gray5,
+  A700: $gray2,
+  contrast: (
+    50: $opacity-black-4,
+    100: $opacity-black-4,
+    200: $opacity-black-4,
+    300: $opacity-black-4,
+    400: $opacity-black-4,
+    500: $gray1,
+    600: $white-87-opacity,
+    700: $white-87-opacity,
+    800: $white-87-opacity,
+    900: $white-87-opacity,
+    A100: $opacity-black-4,
+    A200: $opacity-black-4,
+    A400: $opacity-black-4,
+    A700: $white-87-opacity,
+  )
+);
+
+$ow-progress-spinner-primary: mat-palette($ow-progress-spinner);
+$ow-progress-spinner-accent: mat-palette($ow-progress-spinner);
+$ow-progress-spinner-warn: mat-palette($mat-red);
+
+$ow-progress-spinner-theme: mat-light-theme($ow-progress-spinner-primary, $ow-progress-spinner-accent, $ow-progress-spinner-warn);

@@ -1,0 +1,191 @@
+@import '~@angular/material/theming';
+@import './colors';
+
+/*******************
+* BASIC TYPOGRAPHY *
+*******************/
+$bold: 600;
+
+/** Color */
+// h1, h2, h3, p
+$t-primary-txt-color: $gray1 !default;
+$t-secondary-txt-color: $gray1 !default;
+$t-tertiary-txt-color: $gray1 !default;
+$t-text-txt-color: $gray1 !default;
+
+// Links
+$t-link-txt-color: $cerulean !default;
+$t-link-hover-txt-color: $cerulean-light !default;
+
+$ow-general-typography: mat-typography-config(
+  $font-family: '"Source Sans Pro", Arial, sans-serif',
+  //$display-4:     mat-typography-level(112px, 112px, 300), todo discuss
+  //$display-3:     mat-typography-level(56px, 56px, 400),
+  //$display-2:     mat-typography-level(45px, 48px, 400),
+  //$display-1:     mat-typography-level(34px, 40px, 400),
+  $headline: mat-typography-level(24px, 40px, 400),
+  $title: mat-typography-level(20px, 1.3, 400),
+  $subheading-2: mat-typography-level(18px, 1.5, 400), // for material inner use only, to be discussed
+  $subheading-1:  mat-typography-level(16px, 1.5, 400),
+  $body-2: mat-typography-level(14px, 1.5, $bold),
+  $body-1: mat-typography-level(14px, 1.5, 400),
+  $caption: mat-typography-level(12px, 1.5, 400)
+  //$button:        mat-typography-level(14px, 14px, 500), // @todo set up basic button style here
+  // Line-height must be unit-less fraction of the font-size.
+  //$input:         mat-typography-level(16px, 1.125, 400) // @todo set up agreed input style here
+);
+
+$ow-palette-primary: (
+  50: #ebebeb,
+  100: #ccc,
+  200: #aaa,
+  300: #888,
+  400: #6f6f6f,
+  500: $gray3,
+  600: #4e4e4e,
+  700: #444,
+  800: #3b3b3b,
+  900: #2a2a2a,
+  A100: $lima-light,
+  A200: $lima,
+  A400: $lima-dark,
+  A700: $limeade-dark,
+  contrast: (
+    50: $gray1,
+    100: $gray1,
+    200: $gray1,
+    300: $white,
+    400: $white,
+    500: $white,
+    600: $white,
+    700: $white,
+    800: $white,
+    900: $white,
+    A100: $gray1,
+    A200: $white,
+    A400: $white,
+    A700: $white,
+  )
+);
+
+/* For use in src/lib/core/theming/_palette.scss */
+$ow-palette-accent: (
+  50: #f0f8e0,
+  100: #daefb3,
+  200: #c2e480,
+  300: #aad94d,
+  400: #97d026,
+  500: $lima,
+  600: #7dc200,
+  700: #72bb00,
+  800: #68b400,
+  900: #55a700,
+  A100: #e5ffd1,
+  A200: #c9ff9e,
+  A400: #adff6b,
+  A700: #9eff52,
+  contrast: (
+    50: $black,
+    100: $black,
+    200: $black,
+    300: $white,
+    400: $white,
+    500: $white,
+    600: $white,
+    700: $white,
+    800: $white,
+    900: $white,
+    A100: $black,
+    A200: $black,
+    A400: $black,
+    A700: $black,
+  )
+);
+
+$ow-app-primary: mat-palette($ow-palette-primary);
+$ow-app-accent: mat-palette($ow-palette-accent);
+
+$ow-app-theme: mat-light-theme($ow-app-primary, $ow-app-accent);
+
+/* MIXINS */
+
+// .mat-headline, h1
+@mixin t-headline() {
+  @include mat-typography-level-to-styles($ow-general-typography, headline);
+  margin: 0;
+}
+
+// .mat-title, h2
+@mixin t-title() {
+  @include mat-typography-level-to-styles($ow-general-typography, title);
+  margin: 0;
+}
+
+// .mat-subheading-2, h3
+@mixin t-subheading-2() {
+  @include mat-typography-level-to-styles($ow-general-typography, subheading-2);
+  margin: 0;
+}
+
+// .mat-subheading-1, h4
+@mixin t-subheading-1() {
+  @include mat-typography-level-to-styles($ow-general-typography, subheading-1);
+  margin: 0;
+}
+
+// .mat-body-strong
+@mixin t-body-strong() {
+  @include mat-typography-level-to-styles($ow-general-typography, body-2);
+  margin: 0;
+}
+
+// .mat-body
+@mixin t-body() {
+  @include mat-typography-level-to-styles($ow-general-typography, body-1);
+  margin: 0;
+}
+
+// .mat-caption, .mat-small
+@mixin t-small() {
+  @include mat-typography-level-to-styles($ow-general-typography, caption);
+  margin: 0;
+}
+
+/* OBSOLETE STUFF, FOR RADIO BUTTONS ONLY */
+
+$ow-palette-radio: (
+  50: $white,
+  100: $gray8,
+  200: $gray7,
+  300: $gray6,
+  400: $gray5,
+  500: $gray4,
+  600: $gray3,
+  700: $gray2,
+  800: $gray1,
+  900: $black,
+  A100: $white,
+  A200: $gray1,
+  A400: $gray5,
+  A700: $gray2,
+  contrast: (
+    50: $opacity-black-4,
+    100: $opacity-black-4,
+    200: $opacity-black-4,
+    300: $opacity-black-4,
+    400: $opacity-black-4,
+    500: $gray1,
+    600: $white-87-opacity,
+    700: $white-87-opacity,
+    800: $white-87-opacity,
+    900: $white-87-opacity,
+    A100: $opacity-black-4,
+    A200: $opacity-black-4,
+    A400: $opacity-black-4,
+    A700: $white-87-opacity,
+  )
+);
+
+$ow-theme-radio-primary: mat-palette($ow-palette-radio);
+$ow-theme-radio-warn: mat-palette($mat-red);
+$ow-theme-obsolete: mat-light-theme($ow-theme-radio-primary, $ow-theme-radio-primary, $ow-theme-radio-warn);

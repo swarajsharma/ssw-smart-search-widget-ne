@@ -1,0 +1,9 @@
+<button mat-raised-button
+  class="form-group btn-white-wide app-button btn btn-success btn-block"
+  (click)="openDialog()">
+  <label matPrefix matlabel class="v-centered-element">
+    <mat-icon matPrefix class="tc-icon blue">person</mat-icon>
+    <span class="rooms-number-txt">{{ noOfRooms }} {{ (noOfRooms > 1 ? 'searchWidget.occupation.rooms' : 'searchWidget.occupation.room') | translate }} :</span>
+    <span class="guests-number-txt"> {{ noOfGuests }} {{ (noOfGuests > 1 ? 'searchWidget.occupation.guests' : 'searchWidget.occupation.guest') | translate }}</span>
+  </label>
+</button>

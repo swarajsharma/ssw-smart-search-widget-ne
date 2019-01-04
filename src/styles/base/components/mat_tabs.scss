@@ -1,0 +1,85 @@
+@import '~@angular/material/theming';
+@import '../typography';
+
+$ow-mat-tabs: (
+  100: $white,
+  500: $pesca,
+  700: $opacity-black-1,
+  contrast: (
+    100: $opacity-black-1,
+    500: $white,
+    700: $opacity-black-1,
+  )
+);
+
+$ow-theme-tabs: mat-palette($ow-mat-tabs);
+$ow-tabs-theme: mat-light-theme($ow-theme-tabs, $ow-theme-tabs);
+
+@mixin ow-mat-tabs() {
+  .mat-tab {
+
+    &-group {
+      .mat-tab-header {
+        overflow: visible;
+        border-bottom: 0;
+      }
+
+      .mat-tab-label {
+        padding: 25px;
+        opacity: 1;
+        background-color: $white;
+        border-bottom: 1px solid $opacity-black-2;
+
+        &:not(.mat-tab-label-active) {
+          &::after {
+            content: '';
+            display: block;
+            height: 2px;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            z-index: 2;
+          }
+        }
+
+        &:not(.mat-tab-label-active) {
+          &:hover {
+            background-color: $opacity-black-1;
+          }
+        }
+
+        &-container {
+          overflow: visible;
+        }
+
+        &-active,
+        &:focus {
+          font-weight: $bold;
+        }
+      }
+
+      .mat-ink-bar {
+        height: 5px;
+      }
+    }
+
+    &-body {
+      padding: 10px 0;
+      background-color: $white;
+
+      &-wrapper {
+        box-shadow: 0 2px 4px 0 $opacity-black-2;
+      }
+    }
+  }
+}
+
+/**
+ * Login widget overrides
+ */
+.login-widget {
+  .mat-tab-body-wrapper {
+    box-shadow: none;
+  }
+}

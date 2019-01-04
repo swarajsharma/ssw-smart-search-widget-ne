@@ -1,0 +1,15 @@
+@import 'base/screens';
+
+/**
+ * Classes to be passed to the select panel
+ * @Input() panelClass: string | string[] | Set<string> | { [key: string]: any; }
+ */
+.cdk-overlay-container {
+  .mat-select-panel {
+    &.full-height {
+      @include tablet {
+        max-height: none;
+      }
+    }
+  }
+}

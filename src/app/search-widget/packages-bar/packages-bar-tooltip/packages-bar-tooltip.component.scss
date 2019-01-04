@@ -1,0 +1,306 @@
+@import '../../../../styles/base/colors';
+@import '../../../../styles/base/typography';
+@import '../../../../styles/base/screens';
+
+:host {
+  border-radius: 4px;
+  display: flex;
+  margin: 15px 0;
+
+  mat-form-field {
+    background: $white;
+    border: solid $gray6 1px;
+    border-radius: 4px;
+  }
+
+  &:nth-of-type(1) {
+    > mat-form-field {
+      border-radius: 4px 4px 0 0;
+      border-bottom-width: 0;
+    }
+    margin-bottom: 0;
+  }
+
+  &:nth-of-type(2) {
+    > mat-form-field {
+      border-radius: 0 0 4px 4px;
+    }
+    margin-top: 0;
+  }
+
+  &:only-of-type {
+    > mat-form-field {
+      border-radius: 4px;
+      border-width: 1px;
+    }
+    margin: 15px 0;
+  }
+
+  mat-chip {
+    align-items: center;
+    border-radius: 4px;
+    height: 28px;
+    line-height: 1;
+    max-height: 28px;
+    margin: 0;
+    padding: 5px;
+  }
+
+  mat-chip-list {
+    flex: 1 1 auto;
+    order: 1;
+    outline: 0;
+  }
+
+  .multiple-locations {
+    padding-left: 10px;
+    margin-top: 0;
+  }
+
+  ::ng-deep {
+
+    .mat-chip-list-wrapper {
+      align-content: center;
+      align-items: center;
+      display: flex;
+      flex: 1 1 auto;
+      height: 40px;
+      margin: 0;
+      outline: none;
+      padding: 0;
+    }
+
+    .mat-input-wrapper {
+      padding: 0;
+    }
+
+    .mat-input-infix {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-content: stretch;
+      justify-content: flex-start;
+      align-items: stretch;
+    }
+
+    .mat-chip-input.mat-input-element {
+      flex: 1 1 auto;
+      height: auto;
+      margin: 0 0 0 -100%;
+      order: 1;
+      padding-left: 10px;
+      position: absolute;
+      max-width: 0;
+
+      &.show-element {
+        margin: 0;
+        position: relative;
+        max-width: none;
+      }
+    }
+
+    .mat-input-infix.mat-form-field-infix {
+      display: flex;
+      height: 40px;
+    }
+
+    .mat-form-field-label {
+      &::after {
+        content: ':';
+        display: inline-block;
+      }
+    }
+
+    .mat-form-field-label-wrapper.mat-input-placeholder-wrapper.mat-form-field-placeholder-wrapper {
+      align-items: center;
+      display: flex;
+      flex: 0 0 auto;
+      height: 40px;
+      position: static;
+      padding: 0 !important;
+      top: auto;
+      width: auto;
+    }
+
+    .mat-form-field-label.mat-input-placeholder {
+      align-items: center;
+      display: flex !important;
+      font-weight: $bold;
+      flex: 0 1 auto;
+      margin: 10px 10px 0 10px;
+      min-width: auto;
+      position: static;
+      transform: none !important;
+      width: auto !important;
+    }
+
+    .mat-form-field-infix {
+      display: flex;
+    }
+
+    .mat-form-field-appearance-legacy {
+
+      .mat-form-field-label-wrapper {
+        align-items: center;
+        display: flex;
+        flex: 0 0 auto;
+        order: 0;
+        padding: 0;
+        position: static;
+        width: auto;
+      }
+
+      .mat-form-field-label {
+        align-items: center;
+        color: $black;
+        display: flex;
+        font-weight: $bold;
+        margin: -2px 0 0;
+        padding: 10px;
+        position: relative;
+        top: auto;
+        width: auto;
+      }
+
+      &.mat-form-field-can-float.mat-form-field-should-float {
+        .mat-form-field-label {
+          margin: -2px 0 0 0;
+          transition: none;
+          transform: none;
+        }
+      }
+
+      .mat-form-field-wrapper {
+        padding: 0;
+      }
+
+      .mat-form-field-underline {
+        height: 0;
+
+        .mat-form-field-ripple {
+          height: 0;
+          transform: none;
+          transition: none;
+        }
+      }
+    }
+
+  }
+
+  .message-wrapper {
+    align-items: center;
+    background: $white;
+    border: solid 1px $gray6;
+    border-radius: 4px;
+    display: flex;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    z-index: 100;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -6px;
+      left: 50%;
+      width: 15px;
+      background: $white;
+      height: 15px;
+      border: solid 1px $gray6;
+      transform: rotateZ(45deg);
+      z-index: 0;
+    }
+
+    .message-text {
+      background: $white;
+      border-radius: 4px;
+      line-height: 1.4;
+      margin: 0;
+      width: 100%;
+      z-index: 1;
+
+      p {
+        align-items: center;
+        background: $sun;
+        border-radius: 4px;
+        color: $white;
+        display: flex;
+        margin: 10px;
+        min-height: 40px;
+        padding: 10px 10px 10px 0;
+
+        ::ng-deep {
+          > span > a {
+            color: $white;
+
+            &:visited, &:active {
+              color: $white;
+            }
+          }
+
+          mat-icon {
+            color: $white;
+          }
+        }
+      }
+    }
+
+    mat-icon {
+      color: $white;
+      margin: 10px;
+    }
+  }
+
+  .popular-locations-btn {
+    align-items: center;
+    background: none;
+    border: 0;
+    color: $cerulean;
+    cursor: pointer;
+    display: flex;
+    order: 1;
+    outline: 0;
+    padding-right: 15px;
+
+    > mat-icon {
+      margin-right: 5px;
+    }
+  }
+
+  .popular-btn-label {
+    display: none;
+
+    @include tablet() {
+      display: flex;
+    };
+  }
+}
+
+::ng-deep {
+
+  mat-optgroup {
+    &.popular-tooltip-group {
+      > label {
+        @include t-body;
+        border-bottom: 1px solid $gray6;
+        height: 40px;
+        line-height: 40px;
+        padding: 0 10px;
+      };
+    }
+  }
+
+  mat-option {
+    &.popular-tooltip-opt {
+      padding: 15px;
+
+      &:hover {
+        color: darken($cerulean, 10%);
+      }
+
+      > span {
+        @include t-body;
+      }
+    }
+  }
+}

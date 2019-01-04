@@ -1,0 +1,179 @@
+@import '../../../../../styles/base/typography';
+@import '../../../../../styles/base/screens';
+
+:host {
+
+  display: flex;
+
+  .dialog-content-wrapper {
+    box-sizing: border-box;
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    margin: 40px 20px 20px 20px;
+    max-width: 100%;
+    padding: 0;
+    width: 100%;
+  }
+
+  mat-checkbox {
+    margin: 5px 15px 5px 0;
+    max-height: 40px;
+  }
+
+  ::ng-deep {
+
+    .mat-checkbox {
+      display: flex;
+    }
+
+    .mat-checkbox-background {
+      color: $cerulean;
+      background: $white !important;
+      border: 1px solid $cerulean;
+      border-radius: 1px;
+    }
+
+    .mat-checkbox-layout {
+      align-items: center;
+    }
+
+    .mat-checkbox-checkmark-path {
+      stroke: $black !important;
+    }
+
+    .mat-checkbox-disabled {
+      .mat-checkbox-background {
+        border-color: $gray5;
+      }
+
+      .mat-checkbox-checkmark-path {
+        stroke: $gray5 !important;
+      }
+    }
+
+    .mat-checkbox-label {
+      align-items: center;
+      line-height: 1;
+      white-space: normal;
+    }
+
+    .mat-checkbox-ripple {
+      display: none;
+    }
+  }
+
+}
+
+.header {
+  align-items: center;
+  border-bottom: 1px solid $cerulean;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+  max-height: 100%;
+  position: relative;
+  place-content: center space-between;
+
+  h2 {
+    @include t-subheading-2();
+    font-weight: $bold;
+    flex: 1 1 auto;
+    margin-top: 10px;
+    padding-bottom: 5px;
+  }
+}
+
+.popular-entities-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+
+.popular-entity {
+  display: flex;
+  flex: 1 0 auto;
+  max-width: calc(100%);
+  padding-bottom: 5px;
+  width: calc(100%);
+
+  @include tablet() {
+    width: calc(100% / 3);
+    max-width: calc(100% / 3);
+  }
+
+  @include desktop() {
+    width: 25%;
+    max-width: 25%;
+  }
+
+}
+
+.close-button {
+  background: none;
+  border: 0;
+  color: $cerulean;
+  font-size: 35px;
+  height: 30px;
+  outline: 0;
+  padding: 0;
+  position: absolute;
+  right: -5px;
+  top: -30px;
+  width: 40px;
+
+  &:hover {
+    background: $white;
+    color: darken($cerulean, 10%);
+    cursor: pointer;
+  }
+
+  mat-icon {
+    font-size: 30px;
+  }
+}
+
+.footer {
+  margin-top: 20px;
+}
+
+.apply-button {
+  @include t-body;
+  background: $cerulean-light;
+  border: 0;
+  border-radius: 3px;
+  color: $white;
+  height: 30px;
+  left: 0;
+  outline: 0;
+  margin: 0;
+  padding: 0 20px;
+  position: absolute;
+  top: -25px;
+
+  &:hover {
+    background: $cerulean;
+  }
+}
+
+::ng-deep {
+
+  .popular-locations-panel {
+
+    mat-dialog-container.mat-dialog-container {
+      overflow-x: hidden;
+      padding: 0;
+    }
+
+    .mat-dialog-content {
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  _:-ms-fullscreen, :root .cdk-overlay-pane.popular-locations-panel {
+    min-width: 80vw;
+    width: 100%;
+  }
+
+}

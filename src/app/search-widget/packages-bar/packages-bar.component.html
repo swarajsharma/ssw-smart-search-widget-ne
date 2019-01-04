@@ -1,0 +1,49 @@
+<form [formGroup]="searchForm" novalidate>
+
+  <sw-packages-bar-recent-searches
+    *ngIf="recentSearchItems.length"
+    [recentSearches]="recentSearchItems">
+  </sw-packages-bar-recent-searches>
+
+  <div class="tooltips">
+    <sw-packages-bar-tooltip
+      *ngIf="hasAirportField"
+      type="airports"
+      [control]="searchForm.get('depAirport')">
+    </sw-packages-bar-tooltip>
+    <sw-packages-bar-tooltip
+      type="destinations"
+      [control]="searchForm.get('goingTo')">
+    </sw-packages-bar-tooltip>
+  </div>
+
+  <div class="wrapper-when-duration">
+    <sw-packages-bar-datepicker
+      (updateAvailableDates)="updateAvailableDates()"
+      [control]="searchForm.get('when')"
+      [availableDates]="availableDates">
+    </sw-packages-bar-datepicker>
+    <sw-packages-bar-duration
+      [control]="searchForm.get('duration')">
+    </sw-packages-bar-duration>
+  </div>
+
+  <mat-checkbox *ngIf="showFlexibleCheckbox"
+    [disableRipple]="true"
+    [formControl]="searchForm.get('isFlexible')">
+    {{ 'searchBar.flexible' | translate }}
+  </mat-checkbox>
+
+  <sw-room-selector (selectedRooms)="updateRoomConfiguration($event)"></sw-room-selector>
+
+  <button
+    (click)="search()"
+    type="submit"
+    mat-raised-button
+    color="primary"
+    owat-ssw-button>
+    <mat-icon>search</mat-icon>
+    {{ 'searchBar.search' | translate }}
+  </button>
+
+</form>

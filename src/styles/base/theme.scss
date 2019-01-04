@@ -1,0 +1,57 @@
+@import '~@angular/material/theming';
+@import 'typography';
+@import 'screens';
+@import 'components/mat_tabs';
+@import 'components/mat-buttons';
+@import 'components/mat-button-toggle';
+@import 'components/mat-progress-spinner';
+@import 'components/mat-divider';
+@import 'components/mat-checkbox';
+@import 'components/mat-chips';
+@import 'components/mat-select';
+
+@include mat-core($ow-general-typography);
+@include mat-core-theme($ow-app-theme);
+
+//@include mat-button-theme($nenb-app-theme);
+@include mat-button-theme($ow-button-theme); // todo: clarify
+
+//@include mat-button-toggle-theme($nenb-app-theme);
+//@include mat-button-toggle-theme($ow-mat-button-toggle-theme); // todo: verify
+
+@include mat-card-theme($ow-app-theme);
+@include mat-checkbox-theme($ow-app-theme);
+@include mat-chips-theme($ow-mat-chips-theme);
+//@include mat-table-theme($nenb-app-theme);
+@include mat-datepicker-theme($ow-app-theme);
+@include mat-dialog-theme($ow-app-theme);
+@include mat-expansion-panel-theme($ow-app-theme);
+@include mat-form-field-theme($ow-app-theme);
+//@include mat-grid-list-theme($nenb-app-theme);
+@include mat-icon-theme($ow-app-theme);
+//@include mat-input-theme($nenb-app-theme);
+//@include mat-list-theme($nenb-app-theme);
+//@include mat-menu-theme($nenb-app-theme);
+//@include mat-paginator-theme($nenb-app-theme);
+@include mat-progress-bar-theme($ow-app-theme);
+
+//@include mat-progress-spinner-theme($nenb-app-theme);
+@include mat-progress-spinner-theme($ow-progress-spinner-theme); // todo: verify
+
+@include mat-radio-theme($ow-theme-obsolete); // @fixme
+@include mat-select-theme($ow-app-theme);
+//@include mat-sidenav-theme($nenb-app-theme);
+//@include mat-slide-toggle-theme($nenb-app-theme);
+//@include mat-slider-theme($nenb-app-theme);
+//@include mat-stepper-theme($nenb-app-theme);
+
+//@include mat-tabs-theme($nenb-app-theme);
+@include mat-tabs-theme($ow-tabs-theme); // todo: review
+
+//@include mat-toolbar-theme($nenb-app-theme);
+@include mat-tooltip-theme($ow-app-theme);
+//@include mat-snack-bar-theme($nenb-app-theme);
+
+.mat-form-field {
+  width: 100%;
+}

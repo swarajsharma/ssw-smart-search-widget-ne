@@ -1,0 +1,47 @@
+<div class="container form-container tab-content flex hotel" fxLayout fxLayout="column" fxFlex="auto" fxLayoutGap="15px" fxLayoutAlign="space-between stretch">
+  <div [ngClass]="{show: shouldShow, hide: !shouldShow}" fxFlex="auto" id="locationMsg">
+    <sw-auto-suggest-field (click)="onKeydown()" (selectedLocation)="setLocation($event)" fieldTitle="" placeHolder="{{'searchWidget.hotelLocation' | translate}}"
+      id="location" locationType="{{locationType}}" productType="{{productType}}">
+    </sw-auto-suggest-field>
+    <div class="error-icon" *ngIf="shouldShow">
+      <mat-icon class="tc-icon red">
+        clear
+      </mat-icon>
+    </div>
+  </div>
+  <div class="row align-items-center" fxFlex="auto" fxLayoutGap="15px" fxLayoutAlign="space-between stretch">
+    <div [ngClass]="{show: showDate, hide: !showDate}" class="date-picker" fxFlex="50%" id="checkin" (click)="toggleCheckIn()">
+      <mat-form-field floatLabel="never" class="form-group date-picker">
+        <mat-datepicker-toggle matPrefix [for]="checkinpicker" class="app-input-icon text-blue"></mat-datepicker-toggle>
+        <input matInput [matDatepicker]="checkinpicker" (ngModelChange)="ClickCheckin($event)" [min]="minDate" [max] = "maxDate" placeholder="{{'searchWidget.checkIn' | translate}}"
+          [(ngModel)]="checkInDate" disabled>
+        <mat-datepicker #checkinpicker disabled="false"></mat-datepicker>
+        <div class="error-icon-date" *ngIf="showDate">
+          <mat-icon class="tc-icon red">
+            clear
+          </mat-icon>
+        </div>
+      </mat-form-field>
+    </div>
+    <div [ngClass]="{show: showCheckoutDate, hide: !showCheckoutDate}" class="date-picker" fxFlex="50%" id="checkout" (click)="toggleCheckOut()">
+      <mat-form-field floatLabel="never" class="form-group date-picker">
+        <mat-datepicker-toggle matPrefix [for]="checkoutpicker" class="app-input-icon text-blue"></mat-datepicker-toggle>
+        <input matInput [matDatepicker]="checkoutpicker" (ngModelChange)="ClickCheckout()" [min]="minDateCheckOut" [max]="maxDateCheckOut" placeholder="{{'searchWidget.checkOut' | translate}}"
+          [(ngModel)]="checkOutDate" disabled>
+        <mat-datepicker #checkoutpicker disabled="false"></mat-datepicker>
+        <div class="error-icon-date" *ngIf="showCheckoutDate">
+          <mat-icon class="tc-icon red">
+            clear
+          </mat-icon>
+        </div>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row align-items-center flex" fxFlex="auto">
+    <sw-room-selector isChildLimtPerPage="{{isChildLimtPerPage}}" maxRooms="{{ maxRooms }}" maxAdults={{maxAdults}} maxChildren="{{maxChildren}}" maxGuests="{{maxGuests}}" (selectedRooms)="setSelectedRooms($event)" class="fullwidth flex"></sw-room-selector>
+  </div>
+  <div class="row align-items-center" fxFlex="auto" fxLayoutAlign="space-between stretch">
+    <button class="app-button btn btn-success btn-block" mat-raised-button (click)="search()">
+      <mat-icon class="text-none v-align">search</mat-icon>{{ 'searchBar.searchHotelCB' | translate }} </button>
+  </div>
+</div>

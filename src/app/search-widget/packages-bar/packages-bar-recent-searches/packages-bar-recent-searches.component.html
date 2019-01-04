@@ -1,0 +1,35 @@
+<div [class]="market">
+  <div class="btn-wrapper">
+    <button
+      type="button"
+      class="toggle-button"
+      mat-button
+      (click)="toggleRecent()">
+      {{ getRecentSearchesTranslationKey() | translate:{ length: recentSearches.length } }}
+      <i class="icon" [ngClass]="(isOpen$ | async) ? 'chevronN' : 'chevronS'"></i>
+    </button>
+  </div>
+
+  <ul class="list" *ngIf="isOpen$ | async">
+    <li class="list-item"
+      *ngFor="let recentSearch of recentSearches">
+
+      <a class="srp-link" [href]="recentSearch.url">
+        <div class="destination">{{ getDestinationTitle(recentSearch) }}</div>
+        <div class="search-data">
+          <span>{{ getDateText(recentSearch) }}</span> -
+          <span>{{ getDurationTranslationKey(recentSearch) | translate }}</span> -
+          <span>{{ getImFlexibleText(recentSearch) }}</span>
+        </div>
+      </a>
+
+      <button type="button"
+        class="remove-button"
+        mat-icon-button
+        (click)="removeItem(recentSearch)">
+        <mat-icon>close</mat-icon>
+      </button>
+
+    </li>
+  </ul>
+</div>

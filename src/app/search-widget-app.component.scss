@@ -1,0 +1,144 @@
+@import '../styles/base/colors';
+@import '../styles/base/screens';
+@import '../styles/base/market-colors';
+
+:host {
+
+  mat-tab-group {
+    background-color: $ssw-nenb-background-color;
+  }
+
+  &.hide-tabs-bar {
+    ::ng-deep {
+      mat-tab-header {
+        display: none;
+      }
+    }
+  }
+
+  .tab-label-wrapper {
+    align-items: center;
+    display: flex;
+  }
+
+  ::ng-deep {
+
+    mat-tab-header {
+      border-bottom-color: transparentize($white, .5);
+    }
+
+    mat-icon {
+      color: $ssw-nenb-icon-color;
+      margin-right: 5px;
+    }
+
+    .mat-ink-bar {
+      height: 5px !important;
+    }
+
+    .mat-tab-label {
+      color: $ssw-nenb-foreground-color;
+      opacity: .7;
+      padding: 0;
+      min-width: calc(100% / 3) !important;
+
+      &.mat-tab-label-active {
+        opacity: 1;
+      }
+
+      mat-icon {
+        color: $ssw-nenb-foreground-color;
+        margin-right: 5px;
+      }
+    }
+
+    @include mobile-only {
+      .mat-tab-label {
+        & > .mat-tab-label-content {
+          font-size: 12px !important;
+        }
+      }
+    }
+
+    .tab-content {      
+      padding: 15px 10px;
+      color: $ssw-nenb-foreground-color;
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 4px;
+    }
+
+    .mat-tab-label-content {
+      align-items: center;
+      display: flex;
+    }
+
+    button {
+      > span {
+        > mat-icon {
+          color: $white;
+          margin: 0;
+        }
+      }
+    }
+
+  }
+
+  /* Fixme: this is a temporal solution for BE market styles */
+  &.necbe {
+
+    mat-tab-group {
+      background-color: $ssw-necbe-background-color;
+    }
+
+    ::ng-deep {
+      .mat-tab-label {
+        color: $ssw-necbe-icon-color;
+      }
+
+      mat-tab-header {
+        border-bottom-color: transparentize($white, .5);
+
+        mat-icon {
+          color: $ssw-necbe-icon-color;
+        }
+      }
+    }
+
+    sw-packages-bar {
+
+      ::ng-deep {
+
+        mat-icon {
+          color: $ssw-necbe-icon-color;
+        }
+
+        button {
+          > span {
+            > mat-icon {
+              color: $white;
+              font-size: 22px;
+              margin: 0;
+            }
+          }
+        }
+
+        .message-wrapper {
+          .message-text {
+            mat-icon {
+              color: $white;
+            }
+          }
+        }
+
+        .mat-checkbox-label {
+          color: $black;
+        }
+
+        .mat-chip > .mat-icon {
+          color: $black;
+        }
+      }
+    }
+  }
+
+}

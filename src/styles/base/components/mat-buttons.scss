@@ -1,0 +1,40 @@
+@import '~@angular/material/theming';
+@import '../colors';
+
+@mixin ow-mat-buttons() {
+
+  .mat-raised-button {
+
+    .mat-progress-spinner {
+      display: inline-block;
+      height: 25px;
+    }
+  }
+}
+
+$ow-mat-lima: (
+  100: $lima-light,
+  500: $lima,
+  700: $lima-dark,
+  contrast: (
+    100: $opacity-black-4,
+    500: $white,
+    700: $opacity-black-4,
+  )
+);
+
+$ow-mat-cerulean: (
+  100: $gray8,
+  500: $white,
+  700: $gray1,
+  contrast: (
+    100: $opacity-black-4,
+    500: $cerulean,
+    700: $opacity-black-4,
+  )
+);
+
+$ow-theme-primary-button: mat-palette($ow-mat-lima);
+$ow-theme-accent-button: mat-palette($ow-mat-cerulean);
+
+$ow-button-theme: mat-light-theme($ow-theme-primary-button, $ow-theme-accent-button);
